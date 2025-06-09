@@ -76,7 +76,7 @@ select:focus {
 /* Button */
 button[type="submit"] {
   width: 100%;
-  background-color: #28a745;
+  background-color: #19b53e;
   color: white;
   padding: 12px;
   border: none;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Order Form</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="order-form">
+    <h2>🍽️ Restaurant Order Form</h2>
+    <form action="submit.php" method="POST">
+      <label>Customer Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Table Number OR Home Address:</label>
+      <input type="text" name="table" required>
+
+      <label>Appetizers:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="appetizers[]" value="Garlic Bread"> Chicken Kebabs</label>
+        <label><input type="checkbox" name="appetizers[]" value="Soup of the Day"> Chicken Biryani</label>
+        <label><input type="checkbox" name="appetizers[]" value="Chicken Wings"> Noodle</label>
+        <label><input type="checkbox" name="appetizers[]" value="Veg Spring Rolls"> Hamburger</label>
+        <label><input type="checkbox" name="appetizers[]" value="Veg Spring Rolls"> Pizza</label>
+        <label><input type="checkbox" name="appetizers[]" value="Veg Spring Rolls"> Burrito</label>
+        <label><input type="checkbox" name="appetizers[]" value="Veg Spring Rolls"> Lasagna</label>
+        <label><input type="checkbox" name="appetizers[]" value="Veg Spring Rolls"> Pista</label>
+      </div>
+
+      <label>Main Course:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="main_course[]" value="Grilled Chicken"> Grilled Chicken</label>
+        <label><input type="checkbox" name="main_course[]" value="Spaghetti"> Spaghetti</label>
+        <label><input type="checkbox" name="main_course[]" value="Veggie Burger"> Veggie Burger</label>
+        <label><input type="checkbox" name="main_course[]" value="Paneer Butter Masala"> Paneer Butter Masala</label>
+      </div>
+
+      <label>Desserts:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="desserts[]" value="Chocolate Cake"> Chocolate Cake</label>
+        <label><input type="checkbox" name="desserts[]" value="Ice Cream"> Ice Cream</label>
+        <label><input type="checkbox" name="desserts[]" value="Fruit Salad"> Fruit Salad</label>
+      </div>
+
+      <label>Beverages:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="beverages[]" value="Water"> Water</label>
+        <label><input type="checkbox" name="beverages[]" value="Soft Drink"> Soft Drink</label>
+        <label><input type="checkbox" name="beverages[]" value="Juice"> Juice</label>
+        <label><input type="checkbox" name="beverages[]" value="Tea/Coffee"> Tea / Coffee</label>
+      </div>
+
+      <label>Special Instructions / Allergies:</label>
+      <textarea name="instructions" rows="4"></textarea>
+
+      <label>Payment Method:</label>
+      <select name="payment" required>
+        <option value="">-- Select --</option>
+        <option value="Cash">Cash</option>
+        <option value="Card">Card</option>
+        <option value="Mobile Payment">Mobile Payment</option>
+      </select>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+</body>
+</html>

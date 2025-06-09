@@ -1,3 +1,14 @@
+
+
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: main.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoFood</title>
     <link rel="stylesheet" href="style.css">
-   
+
 </head>
 <body>
 
@@ -22,10 +33,10 @@
             <ul>
 
                 <li><a href="#">Home</a></li>
-                <li>About</li>
+                <li><a href="#" onclick="scrollToBottom()">About</a></li>
                 <li>Menu</li>
-                <li>Chef</li>
-                <li>Recipe</li>
+                <li><a href ="contact">contact</a></li>
+                <li><a href ="logout1.php">logout</li>
 
             </ul>
 
@@ -33,13 +44,13 @@
 
                 <div class="login">
 
-                    <a href="#">Login</a>
+                    <a href="main.html">Login</a>
 
                 </div>
 
                 <div class="sign">
 
-                    <a href="#">Sign Up</a>
+                    <a href="main.html">Sign Up</a>
 
                 </div>
 
@@ -55,15 +66,15 @@
 
                 <p class="M_tag">
 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius dolor, 
-                    incidunt minima impedit deserunt vitae aperiam debitis sequi porro voluptatem fugiat 
-                    exercitationem perspiciatis maxime culpa quam dicta fugit commodi.<br>Lorem ipsum dolor 
-                    sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit.
+                   Savor the taste of happiness with every bite.
+                   At GO!FOOD, we serve more than just meals—we deliver moments of joy,
+                   crafted with fresh ingredients and bursting flavors.
+                   Whether you're dining solo or sharing with loved ones, 
+                   our dishes make every occasion special. Discover a world of taste made just for you.
 
                 </p>
 
-                <button ><a href="order1.html">Order Now</a></button>
+                <button ><a href="order.html">order Now</a></button>
                 
             </div>
 
@@ -100,10 +111,10 @@
 
                 <p class="A_text">
 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam hic 
-                    repudiandae quo deserunt recusandae vel alias iusto sit similique itaque, 
-                    ratione quibusdam unde quas non numquam obcaecati voluptatum sapiente cum.
-
+                    You Will Find Happiness and Food Here
+                    Step into a world where flavors meet feelings. At GoFood, we don’t just 
+                    serve meals—we create memories. Whether it’s a quick bite or a family feast, our 
+                    dishes are crafted to bring joy with every bite.
                 </p>
 
                 <div class="A_icon">
@@ -115,8 +126,8 @@
                         <h5>AUTHENTIC TASTE</h5>
 
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                          Experience the richness of tradition in every dish, made with 
+                          recipes passed down through generations.
                         </p>
 
                     </div>
@@ -132,8 +143,8 @@
                         <h5>PREMIUM INGREDIENTS</h5>
 
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                           We use only the freshest, handpicked ingredients 
+                           to ensure every bite is wholesome and delicious.
                         </p>
 
                     </div>
@@ -149,8 +160,8 @@
                         <h5>CREATIVE MENU</h5>
 
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                           From timeless classics to bold innovations, 
+                           our menu has something to excite every taste bud.
                         </p>
 
                     </div>
@@ -201,7 +212,9 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Juicy, spice-marinated chicken skewers grilled to
+                         perfection—bursting with smoky flavors in every bite.
+
                     </p>
 
                     <div class="price_btn">
@@ -242,7 +255,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aromatic basmati rice layered with tender chicken,
+                        infused with rich spices for a royal feast.
                     </p>
 
                     <div class="price_btn">
@@ -283,7 +297,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Wok-tossed noodles loaded with fresh veggies and
+                        exotic sauces for a perfect Asian-style treat.
                     </p>
 
                     <div class="price_btn">
@@ -324,7 +339,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A classic beef patty nestled in soft buns with crisp
+                        lettuce, melty cheese, and tangy sauces.
                     </p>
 
                     <div class="price_btn">
@@ -365,7 +381,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A cheesy delight topped with fresh ingredients,
+                        savory sauce, and a crispy golden crust.
                     </p>
 
                     <div class="price_btn">
@@ -406,7 +423,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A warm tortilla packed with seasoned meat, beans,
+                        cheese, and veggies—flavor in every fold..
                     </p>
 
                     <div class="price_btn">
@@ -447,7 +465,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Layered sheets of pasta, rich meat sauce, and 
+                        gooey cheese baked to mouthwatering perfection.
                     </p>
 
                     <div class="price_btn">
@@ -488,7 +507,8 @@
                     </div>
 
                     <p class="M_details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                       Creamy, savory, and loaded with herbs—our 
+                       pasta is a comfort dish you won’t forget.
                     </p>
 
                     <div class="price_btn">
@@ -526,10 +546,9 @@
                 <h1>Pizza Burger</h1>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Necessitatibus veritatis magnam non aspernatur inventore aliquid, 
-                    fuga fugit quidem, corporis sit quo nihil id praesentium quae, 
-                    architecto sed nisi! Incidunt, cum.
+                    When pizza meets burger—this fusion delight brings the best of 
+                    both worlds! A juicy patty topped with marinara, pepperoni, 
+                    and melted cheese, all tucked in a burger bun.
                 </p>
 
             </div>
@@ -541,10 +560,9 @@
                 <h1>Chicken Biryani</h1>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Necessitatibus veritatis magnam non aspernatur inventore aliquid, 
-                    fuga fugit quidem, corporis sit quo nihil id praesentium quae, 
-                    architecto sed nisi! Incidunt, cum.
+                    Dive into this royal dish made with fragrant basmati rice, 
+                    tender chicken, and a rich blend of traditional spices. 
+                    Every spoonful is a burst of flavor and heritage.
                 </p>
 
             </div>
@@ -556,10 +574,9 @@
                 <h1>Nacho Cheese Beef Wrap</h1>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Necessitatibus veritatis magnam non aspernatur inventore aliquid, 
-                    fuga fugit quidem, corporis sit quo nihil id praesentium quae, 
-                    architecto sed nisi! Incidunt, cum.
+                   When pizza meets burger—this fusion delight brings 
+                   the best of both worlds! A juicy patty topped with marinara, 
+                   pepperoni, and melted cheese, all tucked in a burger bun.
                 </p>
 
             </div>
@@ -576,9 +593,9 @@
         <h1>GET 40% OFF ALL DISHES</h1>
 
         <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium cumque iusto quis, 
-            soluta rem, quo facilis nihil commodi sit ipsam eius voluptates quasi, voluptatum delectus 
-            odio quaerat sint vel et. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Craving something mouth-watering? Discover our handpicked menu crafted with love,
+            spice, and everything nice. From sizzling street-style bites to gourmet indulgence—your
+            next favorite dish is just a click away.
         </p>
 
         <button>View Menu<i class="fa-solid fa-arrow-right"></i></button>
@@ -588,40 +605,41 @@
 
     <!--Contact-->
 
-    <div class="contact">
+    <div class="contact"  id="contact">
 
         <div class="C_left">
 
             <h3>Contact Us</h3>
             <h1>Get In Touch</h1>
 
-            <form action="#">
+            <form action="../contact.php" method="post"> <!-- Link to PHP file -->
 
-                <label for="#">Name</label>
-                <input type="text" placeholder="Enter Youe Name....">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name..." required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email..." required>
+        
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter Your Subject..." required>
+        
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" placeholder="Type Here" required></textarea>
+        
 
-                <label for="#">Email</label>
-                <input type="email" placeholder="Enter Your Email...">
-
-                <label for="#">Subject</label>
-                <input type="text" placeholder="Enter Your Subject....">
-
-                <label for="#">Comments</label>
-                <textarea name="" id="" placeholder="Type Here"></textarea>
-
-            </form>
-
-            <button>Send Now<i class="fa-solid fa-arrow-right"></i></button>
+            <button type="'submit">Send Now<i class="fa-solid fa-arrow-right"></i></button>
 
         </div>
 
         <div class="C_right">
 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eligendi ea, est, 
-                nobis blanditiis id nam voluptatum in incidunt numquam amet molestias labore 
-                inventore animi repellat minus tenetur, assumenda error? Lorem ipsum dolor sit 
-                amet consectetur adipisicing elit.
+                We’d Love to Hear From You!
+                Have a question, feedback, or craving that just can’t wait? 
+                Reach out to us anytime—we’re here to serve you with delicious 
+                food and warm hospitality. Whether you're planning a party, 
+                looking for catering, or simply need help with your order, 
+                our team is always ready to assist.
             </p>
 
             <div class="C_icon">
@@ -698,10 +716,10 @@
             <img src="image/logo.png" alt="">
 
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Aliquid perferendis quas consectetur quasi dolore aut 
-                provident ipsa? Vel accusantium eos possimus saepe harum 
-                veritatis ea laudantium, unde omnis cumque corporis?
+                At GO!FOOD, we believe great food brings people together. 
+                Whether you're craving bold street flavors or gourmet indulgence,
+                 our dishes are made with passion, precision, and the freshest
+                ingredients. Taste happiness in every bite!
             </p>
 
             <a href="#">view more</a>
@@ -731,7 +749,9 @@
                 <div class="F_text">
 
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Stay tuned with our latest kitchen creations, 
+                        food trends, and exclusive deals. Follow us and
+                         never miss a moment of mouthwatering goodness.
                     </p>
 
                     <p class="date">15/01/2025</p>
@@ -747,7 +767,9 @@
                 <div class="F_text">
 
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Stay tuned with our latest kitchen creations,
+                         food trends, and exclusive deals. Follow us and 
+                         never miss a moment of mouthwatering goodness.
                     </p>
 
                     <p class="date">25/03/2025</p>
@@ -782,6 +804,6 @@
     </footer>
 
     <p class="end">Design By <i class="fa-solid fa-face-grin"></i><span> Ritesh Nikode</span></p>
-
+ <script src="script.js"></script>
 </body>
 </html>

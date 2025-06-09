@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e7dff, #4e5ef7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4e5ef7;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4e5ef7;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3c4bd5;
+        }
+
+        .toggle-link {
+            color: #4e5ef7;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .toggle-link:hover {
+            color: #3c4bd5;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .result.success {
+            color: green;
+        }
+
+        .result.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form id="createForm" onsubmit="createAccount(event)">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="date" name="dob" required>
+            <input type="submit" value="Create Account">
+        </form>
+        <div id="createResult" class="result"></div>
+
+        <hr>
+
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="login(event)">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div id="loginResult" class="result"></div>
+
+        <p class="toggle-link" onclick="toggleForms()">Switch to Create Account</p>
+    </div>
+
+    <script>
+        function createAccount(event) {
+            event.preventDefault();
+            const formData = new FormData(document.getElementById("createForm"));
+            fetch('create_account.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
+                const resultDiv = document.getElementById("createResult");
+                resultDiv.textContent = data;
+                resultDiv.className = data.includes("success") ? "result success" : "result error";
+            });
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const formData = new FormData(document.getElementById("loginForm"));
+            fetch('login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
+                const resultDiv = document.getElementById("loginResult");
+                if (data === "success") {
+                    window.location.href = "index.php";
+                } else {
+                    resultDiv.textContent = data;
+                    resultDiv.className = "result error";
+                }
+            });
+        }
+
+        function toggleForms() {
+            const createForm = document.getElementById("createForm");
+            const loginForm = document.getElementById("loginForm");
+            const createResult = document.getElementById("createResult");
+            const loginResult = document.getElementById("loginResult");
+            const toggleLink = document.querySelector(".toggle-link");
+
+            if (createForm.style.display === "none") {
+                createForm.style.display = "block";
+                loginForm.style.display = "none";
+                createResult.style.display = "block";
+                loginResult.style.display = "none";
+                toggleLink.textContent = "Switch to Login";
+            } else {
+                createForm.style.display = "none";
+                loginForm.style.display = "block";
+                createResult.style.display = "none";
+                loginResult.style.display = "block";
+                toggleLink.textContent = "Switch to Create Account";
+            }
+        }
+
+        // Initialize with login form visible
+        toggleForms();
+    </script>
+</body>
+</html>

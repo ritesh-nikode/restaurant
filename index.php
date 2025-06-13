@@ -32,10 +32,10 @@ if (!isset($_SESSION['user_id'])) {
 
             <ul>
 
-                <li><a href="#">Home</a></li>
-                <li><a href="#" onclick="scrollToBottom()">About</a></li>
-                <li>Menu</li>
-                <li><a href ="contact">contact</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href ="order.html">Menu</li>
+                <li><a href ="contact.html">contact</a></li>
                 <li><a href ="logout1.php">logout</li>
 
             </ul>

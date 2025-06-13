@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | The Food Lounge</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #4e342e, #3e2723);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bgWave 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgWave {
+      0% { background: linear-gradient(135deg, #4e342e, #3e2723); }
+      50% { background: linear-gradient(135deg, #5d4037, #4e342e); }
+      100% { background: linear-gradient(135deg, #4e342e, #3e2723); }
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: floatInfo 6s infinite ease-in-out;
+    }
+
+    @keyframes floatInfo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .contact-box h1 {
+      font-size: 28px;
+      color: #ffcc80;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #ffa726;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .highlight {
+      color: #ffa726;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-box">
+    <h1>Contact Of Restaurant</h1>
+    <p><span class="highlight">Phone:</span> +91 9579182298D</p>
+    <p><span class="highlight">Email:</span> riteshnikode94@gmail.com</p>
+    <p><span class="highlight">Address:</span>Keshav Sity, Ring Road, Wardha</p>
+    <p><span class="highlight">Hours:</span> Mon–Sun: 11 AM – 11 PM</p>
+  </div>
+</body>
+</html>
+
